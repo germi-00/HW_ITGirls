@@ -1,0 +1,15 @@
+.titel {
+    text-align: center;
+}
+
+.input-and-button {
+    text-align: center;
+}
+
+#result {
+    list-style-type: none;
+}
+
+.task-is-done {
+    text-decoration: line-through;
+}
