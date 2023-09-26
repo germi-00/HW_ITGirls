@@ -11,6 +11,9 @@ function getResult() {
 }
 
 button.addEventListener('click', getResult);
+if (result.trim() === '') {
+    return;
+}
 
 const list = document.querySelector('ul');
 list.addEventListener('click', function (evt) {
