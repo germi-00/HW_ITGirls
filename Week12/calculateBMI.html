@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор ИМТ</title>
+    <style>
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #weight,
+        #hight {
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #button {
+            background-color: lightgreen;
+            padding: 10px;
+            color: white;
+            border-color: lightgreen;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Калькулятор ИМТ</h1>
+    <main id="main">
+        <label for="weight">Вес(кг):</label>
+        <input type="number" id="weight">
+        <label for="hight">Рост(см):</label>
+        <input type="number" id="hight">
+        <input type="button" value="Рассчитать ИМТ" id="button">
+        <p id="result"></p>
+    </main>
+    <script>
+        const weight = document.getElementById("weight");
+        const hight = document.getElementById("hight");
+        const button = document.getElementById("button");
+        const result = document.getElementById("result");
+
+        const calculateBMI = () => {
+            let makeWeightNumber = Number(weight.value);
+            let makeHightNumber = Number(hight.value) / 100;
+            let BMI = makeWeightNumber / (Math.pow(makeHightNumber, 2));
+            result.textContent = `Индекс массы тела(ИМТ): ${BMI.toFixed(2)}`
+        }
+        //Как можно округлить число не до целого, а до двух десятичных знаков с помощью Math.round()?
+
+        button.addEventListener('click', calculateBMI);
+    </script>
+</body>
+
+</html>
