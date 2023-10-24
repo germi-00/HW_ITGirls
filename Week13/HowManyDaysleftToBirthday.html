@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дни до дня рождения</title>
+    <style>
+        main,
+        h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, serif;
+        }
+
+        #button {
+            background-color: lightblue;
+            padding: 10px;
+            color: white;
+            border-color: lightblue;
+        }
+
+        #date {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Дни до дня рождения</h1>
+    <main>
+        <div id="container">
+            <input type="date" id="date">
+            <input type="button" id="button" value="Посчитать">
+        </div>
+        <p id="result">Пожалуйста, введите дату рождения</p>
+    </main>
+
+    <script>
+        let date = document.getElementById("date");
+        let button = document.getElementById("button");
+        let result = document.getElementById("result");
+        let calculateHowManyDaysLeft = () => {
+            let currentDate = new Date();
+            let currentDateInMili = Date.parse(currentDate);
+
+            let birthday = new Date(date.value);
+
+            let birthdayInMili = Date.parse(date.value);
+
+            let currentYear = currentDate.getFullYear();
+            let howManyDaysInThisYear = (currentYear % 4 == 0) ? 366 : 365;
+
+
+
+            let birthdayInThisYear = new Date(birthday.setFullYear(currentYear, birthday.getMonth(), birthday.getDate()));
+            let birthdayInThisYearInMili = Date.parse(birthdayInThisYear);
+            let birthdayInNextYear = new Date(birthday.setFullYear(currentYear + 1, birthday.getMonth(), birthday.getDate()));
+            let birthdayInNextYearInMili = Date.parse(birthdayInNextYear);
+
+
+            if (currentDateInMili > birthdayInThisYearInMili) {
+                let HowManyDaysLeft = Math.round((birthdayInNextYearInMili - currentDateInMili) / 24 / 3600 / 1000);
+
+                let stringHowManyDaysLeft = String(HowManyDaysLeft);
+
+                if (stringHowManyDaysLeft.endsWith("14")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("13")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("12")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("11")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("0")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("9")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("8")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("7")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("6")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("5")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("4")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("3")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("2")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("1")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " день";
+                }
+
+            }
+            else {
+                let HowManyDaysLeft = Math.round((birthdayInThisYearInMili - currentDateInMili) / 24 / 3600 / 1000);
+
+                let stringHowManyDaysLeft = String(HowManyDaysLeft);
+
+                if (stringHowManyDaysLeft.endsWith("14")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("13")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("12")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("11")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("0")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("9")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("8")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("7")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("6")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("5")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дней";
+                }
+                else if (stringHowManyDaysLeft.endsWith("4")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("3")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("2")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " дня";
+                }
+                else if (stringHowManyDaysLeft.endsWith("1")) {
+                    result.textContent = "До дня рождения осталось " + HowManyDaysLeft + " день";
+                }
+            }
+        }
+        button.addEventListener("click", calculateHowManyDaysLeft);
+    </script>
+</body>
+
+</html>
